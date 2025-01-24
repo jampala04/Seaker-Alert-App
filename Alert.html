@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Metrics Dashboard</title>
+    <link rel="stylesheet" href='styles.css'>
+</head>
+<body>
+
+    <div class="dashboard">
+        <h1>Metrics Dashboard</h1>
+        
+        <div class="metric-container">
+            <div class="metric">
+                <h2>CPU USAGE</h2>
+                <p><span id="cpu_usage">Loading...</span>%</p>
+            </div>
+
+            <div class="metric">
+                <h2>RAM USAGE</h2>
+                <p><span id="ram_usage">Loading...</span> GB</p>
+            </div>
+        </div>
+
+        <div class="metric-container">
+            <div class="metric">
+                <h2>Disk USAGE</h2>
+                <p><span id="disk_usage">Loading...</span> GB</p>
+            </div>
+
+            <div class="metric">
+                <h2>UPTIME</h2>
+                <p><span id="uptime">Loading...</span> hours</p>
+            </div>
+        </div>
+
+        <div id="alert" class="alert" style="display:none;">
+            <p id="alert_message"></p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+
+</body>
+</html>

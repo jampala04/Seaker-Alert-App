@@ -1,0 +1,47 @@
+{
+  "cpu_threshold": 90,
+  "ram_threshold": 8,
+  "disk_threshold": 10
+}
+
+import json
+
+# Function to load thresholds from the config file
+def load_thresholds():
+    with open('config.json', 'r') as file:
+        thresholds = json.load(file)
+    return thresholds
+import psutil
+
+# Function to check if metrics exceed thresholds
+def check_thresholds(cpu, ram, disk):
+    thresholds = load_thresholds()  # Load thresholds from the config file
+    alerts = []  # List to store alert messages
+    
+    if cpu > thresholds["cpu_threshold"]:
+        alerts.append(f"CPU usage is {cpu}% which is above the threshold of {thresholds['cpu_threshold']}%.")
+    
+    if ram > thresholds["ram_threshold"]:
+        alerts.append(f"RAM usage is {ram} GB which is above the threshold of {thresholds['ram_threshold']} GB.")
+    
+    if disk > thresholds["disk_threshold"]:
+        alerts.append(f"Disk usage is {disk} GB which is above the threshold of {thresholds['disk_threshold']} GB.")
+    
+    return alerts
+import psutil
+
+# Function to check if metrics exceed thresholds
+def check_thresholds(cpu, ram, disk):
+    thresholds = load_thresholds()  # Load thresholds from the config file
+    alerts = []  # List to store alert messages
+    
+    if cpu > thresholds["cpu_threshold"]:
+        alerts.append(f"CPU usage is {cpu}% which is above the threshold of {thresholds['cpu_threshold']}%.")
+    
+    if ram > thresholds["ram_threshold"]:
+        alerts.append(f"RAM usage is {ram} GB which is above the threshold of {thresholds['ram_threshold']} GB.")
+    
+    if disk > thresholds["disk_threshold"]:
+        alerts.append(f"Disk usage is {disk} GB which is above the threshold of {thresholds['disk_threshold']} GB.")
+    
+    return alerts
